@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jonibek Bahodirov — Student • Developer • Educator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ═══ LOADER ═══ -->
+<div class="loader" id="loader">
+  <div class="loader__inner">
+    <div class="loader__logo">
+      <span>J</span><span>B</span>
+    </div>
+    <div class="loader__bar"><span id="loaderBar"></span></div>
+    <div class="loader__text">initializing<span class="dots"><i>.</i><i>.</i><i>.</i></span></div>
+  </div>
+</div>
+
+<!-- ═══ CURSOR ═══ -->
+<div class="cursor" id="cursor"><span></span></div>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- ═══ PROGRESS + GLOW ═══ -->
+<div class="progress" id="progress"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- ═══ 3D CANVAS ═══ -->
+<canvas id="webgl"></canvas>
+<div class="grain"></div>
+<div class="vignette"></div>
+<div class="aurora"></div>
+
+<!-- ═══ NAV ═══ -->
+<header class="nav" id="nav">
+  <a class="nav__logo" href="#top">
+    <span class="nav__mark">JB</span>
+    <span class="nav__name">Jonibek&nbsp;Bahodirov</span>
+  </a>
+  <nav class="nav__links" id="navLinks">
+    <a href="#about"><span>About</span></a>
+    <a href="#projects"><span>Projects</span></a>
+    <a href="#education"><span>Education</span></a>
+    <a href="#teaching"><span>Teaching</span></a>
+    <a href="#achievements"><span>Awards</span></a>
+    <a href="#experience"><span>Experience</span></a>
+    <a href="#contact" class="nav__cta"><span>Contact</span></a>
+  </nav>
+  <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+</header>
+
+<main id="top">
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg-shapes">
+      <span class="shape shape--ring"></span>
+      <span class="shape shape--blob"></span>
+      <span class="shape shape--grid"></span>
+    </div>
+
+    <div class="hero__inner">
+      <div class="hero__tag reveal">
+        <span class="pulse"></span> Available for collaborations
+      </div>
+
+      <h1 class="hero__title">
+        <span class="line reveal" style="--d:.05s"><span>Jonibek</span></span>
+        <span class="line reveal" style="--d:.15s"><span class="gradient-text">Bahodirov</span></span>
+      </h1>
+
+      <div class="hero__roles reveal" style="--d:.25s">
+        <span class="role" data-role>Student</span>
+        <span class="dot">•</span>
+        <span class="role" data-role>Developer</span>
+        <span class="dot">•</span>
+        <span class="role" data-role>Educator</span>
+        <span class="dot">•</span>
+        <span class="role" data-role>Problem Solver</span>
+      </div>
+
+      <p class="hero__lede reveal" style="--d:.35s">
+        11th-grade student at Thompson International School, Tashkent.
+        Building things with code, teaching what I learn, and always shipping the next idea.
+      </p>
+
+      <div class="hero__actions reveal" style="--d:.45s">
+        <a href="#projects" class="btn btn--primary magnetic">
+          <span>Explore Projects</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#contact" class="btn btn--ghost magnetic">Get in touch</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll">
+      <span>scroll</span>
+      <i></i>
+    </div>
+  </section>
+
+  <!-- ═══ MARQUEE 1 ═══ -->
+  <div class="marquee">
+    <div class="marquee__track">
+      <span>COMPUTER SCIENCE</span><i>✦</i>
+      <span>MACHINE LEARNING</span><i>✦</i>
+      <span>ARTIFICIAL INTELLIGENCE</span><i>✦</i>
+      <span>WEB DEVELOPMENT</span><i>✦</i>
+      <span>LINUX</span><i>✦</i>
+      <span>PROGRAMMING</span><i>✦</i>
+      <span>COMPUTER SCIENCE</span><i>✦</i>
+      <span>MACHINE LEARNING</span><i>✦</i>
+      <span>ARTIFICIAL INTELLIGENCE</span><i>✦</i>
+      <span>WEB DEVELOPMENT</span><i>✦</i>
+      <span>LINUX</span><i>✦</i>
+      <span>PROGRAMMING</span><i>✦</i>
+    </div>
+  </div>
+
+  <!-- ═══ STATS ═══ -->
+  <section class="stats">
+    <div class="container stats__grid">
+      <div class="stat reveal">
+        <span class="stat__num" data-count="20" data-suffix="+">0</span>
+        <span class="stat__label">Notepad users</span>
+      </div>
+      <div class="stat reveal" style="--d:.08s">
+        <span class="stat__num" data-count="20" data-suffix="+">0</span>
+        <span class="stat__label">Students taught</span>
+      </div>
+      <div class="stat reveal" style="--d:.16s">
+        <span class="stat__num" data-count="30" data-suffix="+">0</span>
+        <span class="stat__label">IELTS mock tests</span>
+      </div>
+      <div class="stat reveal" style="--d:.24s">
+        <span class="stat__num" data-count="2" data-suffix="nd">0</span>
+        <span class="stat__label">Regional IT Comp.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT ═══ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="section__index">02</span>
+        <h2 class="section__title"><span class="gradient-text">About Me</span></h2>
+      </div>
+
+      <div class="about">
+        <p class="about__lead reveal">
+          I'm a high-school student who loves turning ideas into things that actually
+          work — and then using those things to help other people.
+        </p>
+        <p class="about__text reveal" style="--d:.1s">
+          Alongside my studies I've developed software projects, taught English and SAT
+          prep, built educational resources, competed in IT competitions, and worked in
+          technical support and logistics safety. I'm not claiming expertise — I'm
+          claiming momentum.
+        </p>
+
+        <div class="chips reveal" style="--d:.2s">
+          <span class="chip">Curious</span>
+          <span class="chip">Self-taught</span>
+          <span class="chip">Ships things</span>
+          <span class="chip">Teaches others</span>
+          <span class="chip">Keeps improving</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PROJECTS ═══ -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="section__index">03</span>
+        <h2 class="section__title"><span class="gradient-text">Featured Projects</span></h2>
+        <p class="section__sub">Things I built — the problem, the approach, the stack.</p>
+      </div>
+
+      <div class="grid grid--2">
+
+        <article class="card tilt reveal" data-accent="#3ddcff">
+          <div class="card__media">
+            <div class="card__grid-bg"></div>
+            <div class="card__shine"></div>
+            <span class="card__emoji">💻</span>
+            <span class="card__badge">20+ users</span>
+            <span class="card__num">01</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Notepad</h3>
+            <p class="card__desc">Lightweight note-taking app for daily notes, tasks and journaling. Used by 20+ people.</p>
+            <ul class="tags"><li>Desktop</li><li>UI/UX</li><li>File I/O</li></ul>
+            <span class="card__arrow">→</span>
+          </div>
+        </article>
+
+        <article class="card tilt reveal" data-accent="#7c5cff" style="--d:.08s">
+          <div class="card__media">
+            <div class="card__grid-bg"></div>
+            <div class="card__shine"></div>
+            <span class="card__emoji">🍽️</span>
+            <span class="card__badge">Product</span>
+            <span class="card__num">02</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Digital Menu Platform</h3>
+            <p class="card__desc">Web platform making menu browsing and management easier for customers and owners.</p>
+            <ul class="tags"><li>Web</li><li>Admin Panel</li><li>Responsive</li></ul>
+            <span class="card__arrow">→</span>
+          </div>
+        </article>
+
+        <article class="card tilt reveal" data-accent="#5cff9d" style="--d:.16s">
+          <div class="card__media">
+            <div class="card__grid-bg"></div>
+            <div class="card__shine"></div>
+            <span class="card__emoji">⚽</span>
+            <span class="card__badge">Interactive</span>
+            <span class="card__num">03</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Football Score Table</h3>
+            <p class="card__desc">Live score table for tracking teams, matches and automatic standings updates.</p>
+            <ul class="tags"><li>Web</li><li>Data</li><li>Dynamic UI</li></ul>
+            <span class="card__arrow">→</span>
+          </div>
+        </article>
+
+        <article class="card tilt reveal" data-accent="#ffb45f" style="--d:.24s">
+          <div class="card__media">
+            <div class="card__grid-bg"></div>
+            <div class="card__shine"></div>
+            <span class="card__emoji">🌐</span>
+            <span class="card__badge">This site</span>
+            <span class="card__num">04</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Personal Portfolio</h3>
+            <p class="card__desc">Hand-built WebGL portfolio with custom GLSL shaders and 3D scene graph.</p>
+            <ul class="tags"><li>Three.js</li><li>GLSL</li><li>JS</li></ul>
+            <span class="card__arrow">→</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ MARQUEE 2 ═══ -->
+  <div class="marquee marquee--reverse">
+    <div class="marquee__track">
+      <span>I LEARN THINGS</span><i>◆</i>
+      <span>I BUILD THINGS</span><i>◆</i>
+      <span>I HELP PEOPLE</span><i>◆</i>
+      <span>I KEEP IMPROVING</span><i>◆</i>
+      <span>I LEARN THINGS</span><i>◆</i>
+      <span>I BUILD THINGS</span><i>◆</i>
+      <span>I HELP PEOPLE</span><i>◆</i>
+      <span>I KEEP IMPROVING</span><i>◆</i>
+    </div>
+  </div>
+
+  <!-- ═══ EDUCATION ═══ -->
+  <section class="section" id="education">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="section__index">04</span>
+        <h2 class="section__title"><span class="gradient-text">Education & SAT</span></h2>
+        <p class="section__sub">Where the educator side shows up.</p>
+      </div>
+
+      <div class="grid grid--2">
+        <article class="panel tilt reveal" data-accent="#7c5cff">
+          <div class="panel__glow"></div>
+          <div class="panel__icon">📚</div>
+          <h3 class="panel__title">IELTS Resources</h3>
+          <p class="panel__text">Created <strong>30+ IELTS Reading mock tests</strong> and practice resources, distributed commercially and used to assess learners.</p>
+          <ul class="tags"><li>Reading</li><li>Assessment</li><li>30+ tests</li></ul>
+        </article>
+
+        <article class="panel tilt reveal" data-accent="#3ddcff" style="--d:.08s">
+          <div class="panel__glow"></div>
+          <div class="panel__icon">📐</div>
+          <h3 class="panel__title">SAT Math × Desmos</h3>
+          <p class="panel__text">Educational strategies for using Desmos to solve SAT Math problems faster — plus a planned <em>Ultimate Desmos Solutions Book</em>.</p>
+          <ul class="tags"><li>Desmos</li><li>SAT Math</li><li>Course</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TEACHING ═══ -->
+  <section class="section" id="teaching">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="section__index">05</span>
+        <h2 class="section__title"><span class="gradient-text">Teaching</span></h2>
+      </div>
+
+      <div class="teach reveal">
+        <div class="teach__left">
+          <h3 class="teach__title">English Mentor</h3>
+          <p class="teach__text">Worked as an English mentor at a local course, helping students improve and pass national IELTS certificates.</p>
+          <ul class="tags"><li>IELTS Prep</li><li>Group Teaching</li><li>1-on-1</li></ul>
+        </div>
+        <div class="teach__right">
+          <div class="metric">
+            <span class="metric__num" data-count="20" data-suffix="+">0</span>
+            <span class="metric__label">students taught</span>
+          </div>
+          <div class="metric">
+            <span class="metric__num" data-count="7" data-suffix=".0">0</span>
+            <span class="metric__label">highest IELTS band</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ACHIEVEMENTS ═══ -->
+  <section class="section" id="achievements">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="section__index">06</span>
+        <h2 class="section__title"><span class="gradient-text">Achievements</span></h2>
+      </div>
+
+      <div class="grid grid--2">
+        <article class="award tilt reveal" data-accent="#ffd76a">
+          <span class="award__medal">🏆</span>
+          <div>
+            <h3 class="award__title">2nd Place — Regional IT Competition</h3>
+            <p class="award__text">Placed second in a regional information-technology competition.</p>
+          </div>
+        </article>
+
+        <article class="award tilt reveal" data-accent="#a6a6a6" style="--d:.08s">
+          <span class="award__medal">♟️</span>
+          <div>
+            <h3 class="award__title">Chess — 2nd Category</h3>
+            <p class="award__text">Officially qualified second-category chess player.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ EXPERIENCE ═══ -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="section__index">07</span>
+        <h2 class="section__title"><span class="gradient-text">Experience</span></h2>
+      </div>
+
+      <div class="timeline">
+        <article class="tl reveal">
+          <span class="tl__dot"></span>
+          <div class="tl__meta">Technical</div>
+          <h3 class="tl__title">🛠️ Laptop Technician</h3>
+          <p class="tl__text">Hands-on hardware and software repair for real clients.</p>
+          <ul class="tags">
+            <li>Windows install</li><li>Troubleshooting</li><li>Virus removal</li>
+            <li>Maintenance</li><li>Fan cleaning</li><li>Hardware</li>
+          </ul>
+        </article>
+
+        <article class="tl reveal" style="--d:.1s">
+          <span class="tl__dot"></span>
+          <div class="tl__meta">Professional · 2 months</div>
+          <h3 class="tl__title">🚚 Safety Manager — Logistics</h3>
+          <p class="tl__text">Monitored truck safety, identified risks, communicated procedures and worked inside a professional logistics environment.</p>
+          <ul class="tags"><li>Risk monitoring</li><li>Safety</li><li>Communication</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ JOURNEY ═══ -->
+  <section class="section" id="journey">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="section__index">08</span>
+        <h2 class="section__title"><span class="gradient-text">CS Journey</span></h2>
+        <p class="section__sub">Currently learning — not claiming expertise.</p>
+      </div>
+
+      <div class="journey">
+        <span class="journey__chip reveal">Computer Science</span>
+        <span class="journey__chip reveal" style="--d:.04s">Machine Learning</span>
+        <span class="journey__chip reveal" style="--d:.08s">Artificial Intelligence</span>
+        <span class="journey__chip reveal" style="--d:.12s">Web Development</span>
+        <span class="journey__chip reveal" style="--d:.16s">Linux</span>
+        <span class="journey__chip reveal" style="--d:.20s">Programming</span>
+        <span class="journey__chip reveal" style="--d:.24s">Computer Systems</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CV CTA ═══ -->
+  <section class="section" id="resume">
+    <div class="container">
+      <div class="cta reveal">
+        <div class="cta__glow"></div>
+        <div class="cta__scan"></div>
+        <h2 class="cta__title"><span class="gradient-text">Want the short version?</span></h2>
+        <p class="cta__text">One page. Education, achievements, activities, skills, contact.</p>
+        <a class="btn btn--primary btn--lg magnetic" href="assets/Jonibek_Bahodirov_CV.pdf.pdf" download>
+          <span>Download CV</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section class="section section--contact" id="contact">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="section__index">09</span>
+        <h2 class="section__title"><span class="gradient-text">Contact</span></h2>
+      </div>
+
+      <div class="contact">
+        <h3 class="contact__name reveal">Jonibek <span class="gradient-text">Bahodirov</span></h3>
+        <p class="contact__loc reveal" style="--d:.06s">Tashkent, Uzbekistan</p>
+
+        <div class="contact__actions reveal" style="--d:.12s">
+          <a class="btn btn--primary btn--lg magnetic" href="mailto:jonibekbahodirov788@gmail.com">
+            <span>✉️ jonibekbahodirov788@gmail.com</span>
+          </a>
+          <button class="btn btn--ghost magnetic" id="copyEmail" data-email="jonibekbahodirov788@gmail.com">Copy email</button>
+        </div>
+
+        <p class="contact__note reveal" style="--d:.2s">
+          Open to research opportunities, internships and student collaborations.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <span>© <span id="year">2025</span> Jonibek Bahodirov</span>
+    <span class="footer__built">HTML · CSS · JS · WebGL</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/scene.js"></script>
+<script src="js/js/main.js"></script>
+</body>
+</html>
